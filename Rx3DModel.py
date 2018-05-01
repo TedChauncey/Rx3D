@@ -110,3 +110,16 @@ for i in xrange(X.shape[0]):
 
 Feat = np.asarray(Feat).reshape(X.shape[0]+1,num_feat)
 Feat256 = Feat[1:Feat.shape[1],:]
+
+##Visualize input data
+n = X.shape[0]-1
+s = n/20
+
+plt.figure(figsize=(20, s))
+for i in range(n):
+    # display original
+    ax = plt.subplot(s, n/s, i + 1)
+    plt.imshow(squeeze(X[i])[25,:,:])
+    plt.gray()
+    ax.get_xaxis().set_visible(False)
+    ax.get_yaxis().set_visible(False)
